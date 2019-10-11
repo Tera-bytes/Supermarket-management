@@ -1,5 +1,4 @@
 # Supermarket-management.c
-Language used: C
 
 This application enables the management of an entire supermarket. It has records of the working personnel, products in stock, best customers, etc.. 
 Usually, there are more than 2 cashiers in a supermarket:with this application, each cashier has an account. That is, each cashier needs a password to access their account in order to make sales. The password is unique to each cashier, and only the boss can have access to the cashiers' accounts. 
