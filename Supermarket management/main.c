@@ -1,14 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<windows.h>
-#include<conio.h>  // c'est pour pouvoir utiliser getch() proprement. ie, parfois getch dérange en l'abscence de cette bibliothèque
+#include<conio.h>  // It's in order to use getch()
 #include<unistd.h>
 #define nbreuser 5
 #include<time.h>
 /*
                   Difference entre (fprintf,fscanf) et (fread, fwrite)
-quand tu écris fprintf et fscanf, ça implique que tu utilisera des fichiers texte
-quand tu écris fwrite et fread, ça implique que tu utilisera des fichiers binaire
+quand tu Ã©cris fprintf et fscanf, Ã§a implique que tu utilisera des fichiers texte
+quand tu Ã©cris fwrite et fread, Ã§a implique que tu utilisera des fichiers binaire
 */
 // I ended at the level of list of products( it's not OK)
 void gotoxy(int x, int y)
@@ -86,7 +86,7 @@ int keyword1(int x,int y)
     puts("Enter the password");
     gotoxy(x+2,y+2);
     printf("  ");
-    box[d]=getch();  //à quoi ça sert??
+    box[d]=getch();  //Ã  quoi Ã§a sert??
      do{
       printf("*");
       x++;
@@ -110,7 +110,7 @@ int keyword2(int x,int y) // seul le boss a ce mot de passe
     puts("Enter the password");
     gotoxy(x+2,y+2);
     printf("  ");
-    box[d]=getch();  //à quoi ça sert??
+    box[d]=getch();  //Ã  quoi Ã§a sert??
      do{
       printf("*");
       x++;
@@ -151,8 +151,8 @@ void menu1(int x,int y)
 typedef struct
    {
 
-       char code[10];  // ie, le code d'une catégorie à au max 10 lettres
-       char nom[20];  // ie, le nom d'une catégotie à au max 20 lettres
+       char code[10];  // ie, le code d'une catÃ©gorie Ã  au max 10 lettres
+       char nom[20];  // ie, le nom d'une catÃ©gotie Ã  au max 20 lettres
    }categorie;
 
 typedef struct
@@ -200,8 +200,8 @@ typedef struct
        char codecat[10];
    }prod;
 
-    prod p; // c'est très important (comme ça je n'aurai plus besoin de déclarer ça dans mes fonctions void)
-// de plus, si je déclarais ça en globale, à la fin de l'execution de mes fonctions void, le contenu sera effacé du disque dur
+    prod p; // c'est trÃ¨s important (comme Ã§a je n'aurai plus besoin de dÃ©clarer Ã§a dans mes fonctions void)
+// de plus, si je dÃ©clarais Ã§a en globale, Ã  la fin de l'execution de mes fonctions void, le contenu sera effacÃ© du disque dur
 
 
 void sales()
@@ -464,7 +464,7 @@ void productsmanagement(int x,int y)
     gotoxy(x,y+3); puts("What's its code?");
     gotoxy(x,y+4); scanf("%s", p.codeprod);
     gotoxy(x,y+6); puts("To which categorie does it belong?");
-    gotoxy(x,y+7); scanf("%s", p.codecat); // on ne met pas "&" pour les chaines de caractère (car en mettant "&", cela impliquerai que tu veux mettre plusieurs caractères à la position reservé à un seul caractère normalement.
+    gotoxy(x,y+7); scanf("%s", p.codecat); // on ne met pas "&" pour les chaines de caractÃ¨re (car en mettant "&", cela impliquerai que tu veux mettre plusieurs caractÃ¨res Ã  la position reservÃ© Ã  un seul caractÃ¨re normalement.
     gotoxy(x,y+9); puts("What's its unit price?");
     gotoxy(x,y+10); scanf("%f",&p.PU);
     gotoxy(x,y+12); puts("What's the quantity in stock?");
@@ -495,7 +495,7 @@ else{
      gotoxy(74,8); //scanf("%s",&key);
      //gotoxy(74,10);
      printf("  ");
-    key[m]=getch();  //à quoi ça sert??
+    key[m]=getch();  //Ã  quoi Ã§a sert??
      do{
       printf("*");
 //      x++;
@@ -539,7 +539,7 @@ user usr;
         gotoxy(140,54); printf("copyrightYFWO2018");
         gotoxy(74,2); puts("Enter the name of the new user!");
         gotoxy(74,3); scanf("%s",&usr.nameuser); gotoxy(74,4);
-        //fwrite(&usr[i].nameuser,sizeof(usr[i].nameuser),1,g);  // si tu enregistre directement alors ça sera difficile d'écraser plutard quand l'utilisateur ne voudra pas enregistré
+        //fwrite(&usr[i].nameuser,sizeof(usr[i].nameuser),1,g);  // si tu enregistre directement alors Ã§a sera difficile d'Ã©craser plutard quand l'utilisateur ne voudra pas enregistrÃ©
          puts("Enter his or her keyword");
         gotoxy(74,5); scanf("%s",&usr.keyworduser);
          gotoxy(74,6);
@@ -564,11 +564,11 @@ user usr;
 
       if(b==1){
         system("cls");
-        //récitation
+        //rÃ©citation
         color(0,10); cadre(1,70,0,57); cadre(71,164,0,28); cadre(71,164,28,57);
         color(7,0); gotoxy(100,15); gotoxy(2,3); color(7,0); printf(" 1- ADD A USER");
         gotoxy(2,6); printf(" 2- MODIFY"); gotoxy(2,9); printf(" 3- DELETE"); gotoxy(2,12); printf(" 4- LIST"); gotoxy(2,15); printf(" 5- GO BACK"); gotoxy(2,20); printf("what's your choice?\t");
-                    //fin de la récitation
+                    //fin de la rÃ©citation
               }
               }
             }while(b==2);
@@ -578,7 +578,7 @@ user usr;
         puts("INFORMATION SAVED CORRECTLY!!");
         fclose(g);
        gotoxy(74,37);
-       color(0,0);  // c'est pour empêcher que le message "Appuyer sur une touche pour continuer puis s'afficher " je le fais en écrivant noir sur noir
+       color(0,0);  // c'est pour empÃªcher que le message "Appuyer sur une touche pour continuer puis s'afficher " je le fais en Ã©crivant noir sur noir
         system("pause"); system("cls"); color(7,0);
        }
 }
@@ -611,7 +611,7 @@ color(0,0); system("pause"); system("cls");
 }
 
 
-void deleteuser()  // ça supprime mais ça multiplie l'occurrence
+void deleteuser()  // Ã§a supprime mais Ã§a multiplie l'occurrence
 {  user p;
 int j=0;
 char name[20];
@@ -622,7 +622,7 @@ char name[20];
         system("cls");
          gotoxy(100,15);
          printf("FILE INEXISTENT!!");
-         //récitation
+         //rÃ©citation
         color(0,10); cadre(1,70,0,57); cadre(71,164,0,28); cadre(71,164,28,57);
         color(7,0); gotoxy(100,15);
         gotoxy(2,3); color(7,0); printf(" 1- ADD A USER");
@@ -631,7 +631,7 @@ char name[20];
          gotoxy(2,12); printf(" 4- LIST OF USERS");
          gotoxy(2,15); printf(" 5- GO BACK");
          gotoxy(2,20); printf("what's your choice?\t");
-              //fin de la récitation
+              //fin de la rÃ©citation
     }
     else{
     color(0,10); cadre(1,70,0,57); cadre(71,164,0,28); cadre(71,164,28,57);
@@ -644,8 +644,8 @@ char name[20];
     gotoxy(2,20); printf("what's your choice?\t");
     color(7,0);
     gotoxy(74,2); printf("Which user do you want to delete?");
-    gotoxy(74,4); scanf("%s",name);  // NB: quand tu use scanf, ta chaine de caractère ne doit pas contenir d'espace
-    gotoxy(74,6);                 // "gets" est utilisable avec des chaînes de caractère contenant des espaces (si nn, ça ne marchera pas)
+    gotoxy(74,4); scanf("%s",name);  // NB: quand tu use scanf, ta chaine de caractÃ¨re ne doit pas contenir d'espace
+    gotoxy(74,6);                 // "gets" est utilisable avec des chaÃ®nes de caractÃ¨re contenant des espaces (si nn, Ã§a ne marchera pas)
         while(!feof(f)&& fread(&p,sizeof(p),1,f)){
         if(strcmp(p.nameuser,name)!=0){
             fwrite(&p,sizeof(p),1,g);
@@ -692,7 +692,7 @@ gotoxy(2,20); printf("what's your choice?\t");}
   printf(" ------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n\n\t");
    while(!feof(f) && fread(&p,sizeof(p),1,f))
       {
-      //fread(&p,sizeof(p),1,f);  j'ai preferé mettre ça dans les parenthèses du while; car ça me doublait le dernier nom enregistré!
+      //fread(&p,sizeof(p),1,f);  j'ai preferÃ© mettre Ã§a dans les parenthÃ¨ses du while; car Ã§a me doublait le dernier nom enregistrÃ©!
       printf("%10s\t\t\t%10s\t\t\t%10s\t\t\t%10s\n",p.nameuser,p.keyworduser,p.matriculeuser,p.accessuser);
             printf(" -------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n\t");
       }
@@ -719,7 +719,7 @@ client cust;
             gotoxy(2,4); printf(" 1- ADD A CUSTOMER");   gotoxy(2,7); printf(" 2- MODIFY");  gotoxy(2,10); printf(" 3- DELETE");  gotoxy(2,13); printf(" 4- LIST"); gotoxy(2,16); printf(" 5- GO BACK"); gotoxy(2,22); printf("what's your choice?\t");
         gotoxy(140,54); printf("copyrightYFWO2018"); gotoxy(74,2); puts("Enter the name of the new customer!");gotoxy(74,3); scanf("%s",&cust.nom_client);
         gotoxy(74,4);
-        //fwrite(&usr[i].nameuser,sizeof(usr[i].nameuser),1,g);  // si tu enregistre directement alors ça sera difficile d'écraser plutard quand l'utilisateur ne voudra pas enregistré
+        //fwrite(&usr[i].nameuser,sizeof(usr[i].nameuser),1,g);  // si tu enregistre directement alors Ã§a sera difficile d'Ã©craser plutard quand l'utilisateur ne voudra pas enregistrÃ©
          puts("Enter his or her identifier number");
         gotoxy(74,5); scanf("%s",&cust.code_client);
          gotoxy(74,6);
@@ -803,17 +803,17 @@ char name[20];
         system("cls");
          gotoxy(100,15);
          printf("FILE INEXISTENT!!");
-         //récitation
+         //rÃ©citation
         color(0,10); cadre(1,70,0,57); cadre(71,164,0,28); cadre(71,164,28,57);
         color(7,0); gotoxy(100,15); gotoxy(2,3); color(7,0); printf(" 1- ADD A USER");
         gotoxy(2,6); printf(" 2- MODIFY"); gotoxy(2,9); printf(" 3- DELETE"); gotoxy(2,12); printf(" 4- LIST"); gotoxy(2,15); printf(" 5- GO BACK"); gotoxy(2,20); printf("what's your choice?\t");
-              //fin de la récitation
+              //fin de la rÃ©citation
     }
     else{           color(7,0); horizontale(12,70,10,10); cadre(70,125,5,15);
 
             gotoxy(74,6); printf("Which customer do you want to delete?");
-    gotoxy(74,8); scanf("%s",&name);  // NB: quand tu use scanf, ta chaine de caractère ne doit pas contenir d'espace
-    gotoxy(74,10);                 // "gets" est utilisable avec des chaînes de caractère contenant des espaces (si nn, ça ne marchera pas)
+    gotoxy(74,8); scanf("%s",&name);  // NB: quand tu use scanf, ta chaine de caractÃ¨re ne doit pas contenir d'espace
+    gotoxy(74,10);                 // "gets" est utilisable avec des chaÃ®nes de caractÃ¨re contenant des espaces (si nn, Ã§a ne marchera pas)
         g=fopen("customers2.txt","w");
         while(!feof(f)&& fread(&p,sizeof(p),1,f)){
             if(strcmp(p.nom_client,name)!=0){
@@ -858,7 +858,7 @@ void listcustomer()
       printf(" -------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n\n\t");
       while(!feof(f) && fread(&p,sizeof(p),1,f))
       {
-      //fread(&p,sizeof(p),1,f);  j'ai preferé mettre ça dans les parenthèses du while; car ça me doublait le dernier nom enregistré!
+      //fread(&p,sizeof(p),1,f);  j'ai preferÃ© mettre Ã§a dans les parenthÃ¨ses du while; car Ã§a me doublait le dernier nom enregistrÃ©!
       printf("%10s\t\t\t%10s\t\t\t%10s\t\t\t%10s\n",p.nom_client,p.typ_client,p.code_client,p.sex);
       printf(" ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n\t");
       }
@@ -987,8 +987,8 @@ char name[20];
     }
     else{ color(7,0); horizontale(22,70,14,14); cadre(70,125,8,20);
     gotoxy(74,10); printf("Which product do you want to delete?");
-    gotoxy(74,12); scanf("%s",&name);  // NB: quand tu use scanf, ta chaine de caractère ne doit pas contenir d'espace
-    gotoxy(74,14);                 // "gets" est utilisable avec des chaînes de caractère contenant des espaces (si nn, ça ne marchera pas)
+    gotoxy(74,12); scanf("%s",&name);  // NB: quand tu use scanf, ta chaine de caractÃ¨re ne doit pas contenir d'espace
+    gotoxy(74,14);                 // "gets" est utilisable avec des chaÃ®nes de caractÃ¨re contenant des espaces (si nn, Ã§a ne marchera pas)
         g=fopen("products2.txt","w");
         while(!feof(f)&& fread(&p,sizeof(p),1,f)){
             if(strcmp(p.nom,name)!=0){
@@ -1030,7 +1030,7 @@ void listproducts()
      //verticale(15,15,0,64); verticale(40,40,0,64);  verticale(70,70,0,64); verticale(120,120,0,64);
       while(!feof(f) && fread(&p,sizeof(p),1,f))
       {
-      //fread(&p,sizeof(p),1,f);  j'ai preferé mettre ça dans les parenthèses du while; car ça me doublait le dernier nom enregistré!
+      //fread(&p,sizeof(p),1,f);  j'ai preferÃ© mettre Ã§a dans les parenthÃ¨ses du while; car Ã§a me doublait le dernier nom enregistrÃ©!
     printf("%5s\t\t\t%5f f\t\t\t%5d\t\t\t\t%5d\t\t\t\t%5s\t\t  %5s\n",p.nom,p.PU,p.Qte_stock,p.Qte_seuil,p.codeprod,p.codecat);
     printf(" -------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n\t");
       }
@@ -1131,9 +1131,9 @@ char *users;
 do{ system("cls");
 gotoxy(2,1); printf("\t\t\t\t\t'PERFECTION IS NOT ATTAINABLE BUT IF WE CHASE PERFECTION WE CAN CATCH EXCELLENCE'");
 gotoxy(140,56); printf("copyrightYFWO2018");
-color(0,15);         //      Quand tu as color(a,b), a représente la couleur du text et b représente la couleur du fond!
+color(0,15);         //      Quand tu as color(a,b), a reprÃ©sente la couleur du text et b reprÃ©sente la couleur du fond!
 cadre(70,87,20,25);   gotoxy(72,22); printf("YY SUPERMARKET");
-color(7,0);  // pour que ça me remette un fond noir et le texte en blanc
+color(7,0);  // pour que Ã§a me remette un fond noir et le texte en blanc
 s=keyword1(69,27);
 
 if(s==0){
@@ -1189,7 +1189,7 @@ switch(choix1){
                                     break;
                              case 5:break;
                              default:gotoxy(100,35); printf("INEXISTING CHOICE !!");
-                                     color(0,0); // c'est empêcher que le message "Appuyer sur une touche pour continuer" puis s'afficher; je le fais en écrivant noir sur noir
+                                     color(0,0); // c'est empÃªcher que le message "Appuyer sur une touche pour continuer" puis s'afficher; je le fais en Ã©crivant noir sur noir
                                      system("pause");
                                      system("cls");
                                       break;
